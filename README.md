@@ -33,7 +33,7 @@ To annotate data for cattle, simply use the following command:
 ```bash
 nextflow run evotools/nf-VarAnno --species cattle --genome_version bosTau9
 ```
-The pipeline can annotate 1,000 human variants in 30 minutes (excluding the time required for setting up dependencies and downloading data) when tested using 4 computing cores, each with 16GB of memory. The compute cluster operates on the Altair Grid Engine batch system and runs Scientific Linux 7.
+The pipeline can annotate 1,000 human variants in 30 minutes (excluding the time required for setting up dependencies and downloading data) when tested using 4 computing cores, each with 16GB of memory. The compute cluster operates on the Altair Grid Engine batch system and runs Scientific Linux 7. To further improve the pipeline's efficiency, you can specify the `--split_len` parameter (default=10,000) to split the input into smaller pieces for parallel execution when multiple cores are available. This is recommended for datasets with more than 100,000 variants to annotate.
 
 To obtain the Enformer-predicted functional genomic scores for the test data, run the following command:
 ```bash
