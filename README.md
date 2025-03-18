@@ -22,6 +22,10 @@ To run the annotation pipeline, you'll need:
 2. The **species and genome assembly version** should be specified. The pipeline will automatically obtain other parameters required to retrieve relevant source data for each species. However, this feature is currently available only for human, cattle, pig, dog, and sheep. For other species, users need to specify the parameters manually.
 3. The essential source data for variant annotation can be downloaded automatically by the pipeline based on the species and genome assembly version specified by the user. This includes the reference genome, VEP cache, and conservation BigWig files (for human and cattle only). We recommend allocating 50 GB of space for storing the source data.
 
+# Source data
+Although the pipeline includes a process to download the necessary source data for variant annotation, it is highly recommended that users prepare the source data folder manually. Automatic downloading may fail due to common issues such as timeouts.
+The source data for the newly added features, distance to motifs, can be obtained from: [genome-wide motif sites in humans and cattle](https://doi.org/10.5281/zenodo.15046716), and distances to cattle chromatin data: [cattle chromatin data](http://farm.cse.ucdavis.edu/~ckern/Nature_Communications_2020/)
+
 # Quick start
 After installing Nextflow and Anaconda, you can run the annotation pipeline to annotate test data for humans by typing the following command:
 ```bash
